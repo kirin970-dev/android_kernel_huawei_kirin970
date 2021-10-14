@@ -2803,28 +2803,6 @@ static int __init bfm_early_parse_power_off_charge_cmdline(char *p)
 early_param("androidboot.mode", bfm_early_parse_power_off_charge_cmdline);
 
 
-void bfm_set_valid_long_press_flag(void)
-{
-    bfmr_rrecord_misc_msg_param_t misc_msg;
-    bfmr_detail_boot_stage_e bfmr_bootstage = STAGE_BOOT_SUCCESS;
-
-    bfm_get_boot_stage(&bfmr_bootstage);
-    if (!s_is_recovery_mode && !s_power_off_charge
-        && (bfmr_get_bootup_time() > BFM_BOOT_SUCCESS_TIME_IN_KENREL)
-        && (bfmr_bootstage < STAGE_BOOT_SUCCESS))
-    {
-        memset((void *)&misc_msg, 0, sizeof(misc_msg));
-        memcpy(misc_msg.command, BFR_VALID_LONG_PRESS_LOG,
-            BFMR_MIN(sizeof(misc_msg.command) - 1, strlen(BFR_VALID_LONG_PRESS_LOG)));
-        (void)bfmr_write_rrecord_misc_msg(&misc_msg);
-    }
-    else
-    {
-        BFMR_PRINT_KEY_INFO("There's no need to save long press log\n");
-    }
-}
-
-
 int bfm_chipsets_init(bfm_chipsets_init_param_t *param)
 {
     int ret = 0;
