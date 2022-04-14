@@ -9,4 +9,4 @@ endif
 
 obj-y       += iqi_device.o
 
-subdir-ccflags-y := -Werror
+subdir-ccflags-y :=

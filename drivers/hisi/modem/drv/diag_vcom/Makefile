@@ -6,4 +6,4 @@ endif
 
 obj-y       +=  diag_vcom_main.o  diag_vcom_handler.o
 
-subdir-ccflags-y := -Werror
+subdir-ccflags-y :=

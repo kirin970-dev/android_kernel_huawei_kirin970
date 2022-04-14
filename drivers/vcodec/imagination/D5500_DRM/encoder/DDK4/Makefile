@@ -43,7 +43,7 @@
 # kernel makefile template for module topazkm
 #
 
-KBUILD_CFLAGS := $(filter-out -Werror,$(KBUILD_CFLAGS))
+KBUILD_CFLAGS := $(filter-out,$(KBUILD_CFLAGS))
 
 obj-y := topazkm.o
 

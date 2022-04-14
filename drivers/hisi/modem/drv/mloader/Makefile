@@ -16,4 +16,4 @@ else
 obj-y		    += mloader_load_image_unsec.o
 endif
 
-subdir-ccflags-y := -Werror
+subdir-ccflags-y :=

@@ -43,7 +43,7 @@
 # kernel makefile template for module vdecdd
 #
 
-KBUILD_CFLAGS := $(filter-out -Werror,$(KBUILD_CFLAGS))
+KBUILD_CFLAGS := $(filter-out,$(KBUILD_CFLAGS))
 
 obj-y := vdecdd.o
 

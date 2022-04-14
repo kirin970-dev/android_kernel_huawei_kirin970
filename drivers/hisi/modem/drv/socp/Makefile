@@ -18,4 +18,4 @@ ifeq ($(strip $(CFG_CONFIG_DEFLATE)),YES)
 obj-y      += deflate.o  deflate_test.o
 endif
 
-subdir-ccflags-y := -Werror
+subdir-ccflags-y :=

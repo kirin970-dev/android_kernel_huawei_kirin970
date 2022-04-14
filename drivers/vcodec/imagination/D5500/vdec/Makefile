@@ -45,7 +45,7 @@
 
 M ?= drivers/vcodec/imagination
 
-KBUILD_CFLAGS := $(filter-out -Werror,$(KBUILD_CFLAGS))
+KBUILD_CFLAGS := $(filter-out,$(KBUILD_CFLAGS))
 
 ifeq ($(M),)
 $(error Set $$M to a correct value to represent your path, ex. M := $$(srctree)/drivers/staging/img/)
